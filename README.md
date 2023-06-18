@@ -1,3 +1,5 @@
 # Spike-Gamma
 
-CIte this paper
+Cite this paper
+
+![Spike-gamma example](example.png)
