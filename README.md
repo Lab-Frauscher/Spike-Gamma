@@ -30,7 +30,7 @@ This repository is licensed under a research license. The code and resources pro
 Please note that the authors of this repository take no responsibility for any consequences or damages arising from the use of this code. Users are advised to use it at their own risk and to thoroughly evaluate its suitability for their specific purposes.
 
 
-### By following these steps, acknowledging the research license, citing the appropriate papers, and understanding the disclaimer, you can effectively implement the Spike-Gamma analysis in your project.
+By following these steps, acknowledging the research license, citing the appropriate papers, and understanding the disclaimer, you can effectively implement the Spike-Gamma analysis in your project.
 
 
 
