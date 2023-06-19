@@ -1,6 +1,6 @@
 # Spike-Gamma
 
-The spike-gamma implimentation steps are as follows:
+The spike-gamma implementation steps are as follows:
 
 1. Run the Janca spike detector to obtain spike peak locations for a single bipolar SEEG channel. (spike_detector_hilbert_v25.m)
 2. Apply postprocessing to the spike detections, removing artifacts and spindles. (postprocessing.m)
