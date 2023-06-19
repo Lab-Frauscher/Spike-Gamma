@@ -14,7 +14,7 @@ An example of the spike-gamma is given below:
 ![Spike-gamma example](example.png)
 
 
-Citation:
+Credits:
 
 When using this Spike-Gamma implementation, please cite the following papers:
 
