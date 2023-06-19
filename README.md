@@ -8,6 +8,7 @@ The spike-gamma implimentation steps are as follows:
 4. Utilize these boundaries to extract a 2000 ms segment filtered between [30 100] Hz, and determine if there is preceding gamma activity before the spike. (compute_gamma.m)
 5. For each spike, generate a 3-element array consisting of the maximum gamma power, the corresponding gamma frequency, and the duration of the gamma activity in milliseconds. If no gamma activity is detected, the array returns [0, 0, 0].
 6. Repeat steps 3-5 for each spike, and calculate the spike-gamma location and event rates.
+7. A detailed example of the above steps are provided in test_script.m.
 
 An example of the spike-gamma is given below:
 
@@ -22,14 +23,16 @@ Thomas, J., Kahane, P., Abdallah, C., Avigdor, T., Zweiphenning, W.J., Chabardes
 
 Janca, R., Jezdik, P., Cmejla, R., Tomasek, M., Worrell, G.A., Stead, M., Wagenaar, J., Jefferys, J.G., Krsek, P., Komarek, V. and Jiruska, P., 2015. Detection of interictal epileptiform discharges using signal envelope distribution modelling: application to epileptic and non-epileptic intracranial recordings. Brain topography, 28, pp.172-183.
 
-
-By following these steps, acknowledging the research license, citing the appropriate papers, and understanding the disclaimer, you can effectively implement the Spike-Gamma analysis in your project.
-
-
-
-
 Research License:
 This repository is licensed under a research license. The code and resources provided are intended for academic and research purposes only. For any commercial or non-academic use, please contact the respective authors.
 
 Disclaimer:
 Please note that the authors of this repository take no responsibility for any consequences or damages arising from the use of this code. Users are advised to use it at their own risk and to thoroughly evaluate its suitability for their specific purposes.
+
+
+## By following these steps, acknowledging the research license, citing the appropriate papers, and understanding the disclaimer, you can effectively implement the Spike-Gamma analysis in your project.
+
+
+
+
+
