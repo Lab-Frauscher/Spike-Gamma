@@ -74,6 +74,7 @@ spike = signal_bp(window);
 gamma_signal = signal_gm(window);
 
 % Compute gamma activity within the spike segment
+% This returns a non-zero vector if gamma activity is detected
 spikeGamma = compute_gamma(spike, fs, P1, N2)
 
 % Plot spike boundaries and corresponding gamma signal
