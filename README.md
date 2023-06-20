@@ -7,7 +7,7 @@ The spike-gamma implementation steps are as follows:
 3. Extract each spike as a 300 ms segment filtered between [0.3 500] Hz, and determine the onset (P1) and end (N2) points. (compute_spike_boundary.m)
 4. Utilize these boundaries to extract the spike as a 2000 ms segment filtered between [30 100] Hz, and determine if there is preceding gamma activity. (compute_gamma.m)
 5. For each spike, obtain the results as a 3-element array consisting of the maximum gamma power, the corresponding gamma frequency, and the duration of the gamma activity in milliseconds. If no gamma activity is detected, the array returns [0, 0, 0].
-6. Repeat steps 3-5 for each spike, and obtain the spike-gamma location and event rates.
+6. Repeat steps 3-5 for each spike, and obtain the spike-gamma locations and event rates.
 7. A detailed example of the above steps are provided in test_script.m.
 
 An example of the spike-gamma is given below:
