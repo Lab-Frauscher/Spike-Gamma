@@ -5,16 +5,18 @@ clear all;
 %% Running spike detector
 % Import spike data from the 'signal_example.mat' file
 test_data_spike = importdata('signal_example.mat');
-signal_all = test_data_spike.signal;
-fs = test_data_spike.fs;
+signal_all = test_data_spike.signal; % time samples*N channels
+fs = test_data_spike.fs; % sampling frequency
 
-settings = '-bl 10 -bh 60 -h 60 -jl 3.65 -dec 200'; % default settings
+settings = '-bl 10 -bh 60 -h 60 -jl 3.65 -dec 200'; % default settings of Janca detector
 out = spike_detector_hilbert_v25(signal_all,fs,settings);
 
 %% Post-processing spike detections
 out_pp = postprocessing(out,fs,size(signal_all,2))';
 
-%% Computing spike-gamma for spike i in channel #i
+%% Here we show an example for identifying gamma activty before a single spike on a single channel
+% Please iterate the follwoing steps for each channel, each spike and determine the event rates
+% Computing spike-gamma for spike i in channel #i
 chIdx = 1;
 %   5    18    30    31    35    36
 spIdx = 18;
@@ -22,7 +24,7 @@ spIdx = 18;
 spikeLocations = round(out_pp{chIdx}(spIdx));
 signal = signal_all(:,chIdx);
 
-% Filtering data to estimate spike boundaries
+%% Filtering data to estimate spike boundaries
 % Create Butterworth bandpass filters to preprocess the data
 [b, a] = butter(4, [0.3 500] * 2/fs, 'bandpass');
 [b_gm, a_gm] = butter(4, [30 100] * 2/fs, 'bandpass');
@@ -37,9 +39,7 @@ signal = filtfilt(bn, an, signal);
 signal_bp = filtfilt(b, a, signal);
 signal_gm = filtfilt(b_gm, a_gm, signal);
 
-% Spike-gamma script: Performs preprocessing operations on spike data
-% Set the sampling frequency to 2000 Hz
-fs = 2000;
+%% Spike-gamma script: Performs preprocessing operations on spike data
 
 % Define the time window for the spike segment
 onset = 75e-3 * fs;
