@@ -8,7 +8,7 @@ test_data_spike = importdata('signal_example.mat');
 signal_all = test_data_spike.signal; % time samples*N channels
 fs = test_data_spike.fs; % sampling frequency
 
-settings = '-bl 10 -bh 60 -h 60 -jl 3.65 -dec 200'; % default settings of Janca detector
+settings = '-bl 10 -bh 60 -h 60 -k1 3.65 -dec 200'; % default settings of Janca detector
 out = spike_detector_hilbert_v25(signal_all,fs,settings);
 
 %% Post-processing spike detections
