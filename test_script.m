@@ -26,7 +26,7 @@ signal = signal_all(:,chIdx);
 
 %% Filtering data to estimate spike boundaries
 % Create Butterworth bandpass filters to preprocess the data
-[b, a] = butter(4, [0.3 500] * 2/fs, 'bandpass');
+[b, a] = butter(4, [10 60] * 2/fs, 'bandpass');
 [b_gm, a_gm] = butter(4, [30 100] * 2/fs, 'bandpass');
 
 % Create a notch filter to remove power line noise
@@ -70,7 +70,7 @@ N2 = N2 - ref;
 % Define the new time window and extract the spike and gamma signal
 window = round(N1 - onset : N1 + offset)';
 t = window'/fs;
-spike = signal_bp(window);
+spike = signal(window);
 gamma_signal = signal_gm(window);
 
 % Compute gamma activity within the spike segment
